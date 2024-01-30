@@ -10,18 +10,10 @@ email: alexandr.a.prozorov@gmail.com
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Alexandr Prozorov's personal website.
 footer_text: >
-<<<<<<< HEAD
-  
-keywords: # add your own keywords or leave empty
-lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon:  /assets/img/favicon.ico # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
-# ⚛️
-=======
 keywords: # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: favicon.ico # android-chrome-512x512.png  # ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
->>>>>>> my-temporary-work
 url: https://aprozo.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
 last_updated: false # set to true if you want to display last updated in the footer
@@ -128,13 +120,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-<<<<<<< HEAD
-blog_name: My blog # blog_name will be displayed in your blog page
-blog_description: 
-=======
 blog_name: My Blog # blog_name will be displayed in your blog page
 blog_description:  
->>>>>>> my-temporary-work
 permalink: /blog/:year/:title/
 
 # Pagination
@@ -167,15 +154,9 @@ disqus_shortname: al-folio # put your disqus shortname
 # External sources.
 # If you have blog posts published on medium.com or other external sources,
 # you can display them in your blog by adding a link to the RSS feed.
-<<<<<<< HEAD
-external_sources:
-  # - name: medium.com
-  #   rss_url: https://medium.com/@al-folio/feed
-=======
 # external_sources:
 #   - name: 
 #     rss_url: 
->>>>>>> my-temporary-work
 
 # -----------------------------------------------------------------------------
 # Collections

@@ -2,7 +2,7 @@
       {
             "title": "WSL2",
             "description": "How to setup wsl2 environment",
-            "published": "January 31, 2024",
+            "published": "February 04, 2024",
             "authors": [
               
             ],
@@ -45,21 +45,23 @@ cd install
 pip <span class="nb">install </span>notebook
 <span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.local/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
 <span class="o">}</span></code></pre></figure> <p>I would also recommend to update your <code class="language-plaintext highlighter-rouge">$HOME/.bashrc</code> file in your Home directory, one could take an example in this repository.</p> <p>At least add there :</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">source</span> ~/install/root/bin/thisroot.sh
-</code></pre></div></div> <h2 id="python">Python</h2> <p>Miniconda install <a href="https://educe-ubc.github.io/conda.html" rel="external nofollow noopener" target="_blank">here</a></p> <p>One needs to install CUDA for machine learning <a href="https://canonical-ubuntu-wsl.readthedocs-hosted.com/en/latest/tutorials/gpu-cuda/" rel="external nofollow noopener" target="_blank">https://canonical-ubuntu-wsl.readthedocs-hosted.com/en/latest/tutorials/gpu-cuda/</a></p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda update conda
+</code></pre></div></div> <h2 id="python">Python</h2> <p>Miniconda install <a href="https://educe-ubc.github.io/conda.html" rel="external nofollow noopener" target="_blank">here</a></p> <p>One needs to install CUDA for machine learning <a href="https://canonical-ubuntu-wsl.readthedocs-hosted.com/en/latest/tutorials/gpu-cuda/" rel="external nofollow noopener" target="_blank">https://canonical-ubuntu-wsl.readthedocs-hosted.com/en/latest/tutorials/gpu-cuda/</a></p> <p>Follow this installation : <a href="Nvidia">https://developer.nvidia.com/cuda-downloads?target_os=Linux&amp;target_arch=x86_64&amp;Distribution=WSL-Ubuntu&amp;target_version=2.0&amp;target_type=deb_local</a></p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda update conda
 conda activate
-conda config <span class="nt">--set</span> channel_priority strict
-conda create <span class="nt">-c</span> conda-forge <span class="nt">--name</span> tf root
+
+conda create <span class="nt">--name</span> tf <span class="nv">python</span><span class="o">=</span>3.10
 conda activate tf
 pip <span class="nb">install</span> <span class="nt">--upgrade</span> pip
-python3 <span class="nt">-m</span> pip <span class="nb">install </span><span class="nv">tensorflow</span><span class="o">==</span>2.12
-conda <span class="nb">install</span> <span class="nt">-c</span> conda-forge <span class="nv">cudatoolkit</span><span class="o">=</span>11.2.2
-pip <span class="nb">install </span><span class="nv">cudnn</span><span class="o">==</span>8.9.4
-conda update <span class="nt">--force</span> conda
+pip <span class="nb">install </span>tensorflow[and-cuda]
 
+python3 <span class="nt">-c</span> <span class="s2">"import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"</span>
+
+
+conda update <span class="nt">--force</span> conda
 conda <span class="nb">install</span> <span class="nt">-c</span> anaconda pandas
 conda <span class="nb">install</span> <span class="nt">-c</span> conda-forge uproot
-pip <span class="nb">install</span> <span class="nt">--user</span> root_numpy
-pip <span class="nb">install</span> <span class="nt">--upgrade</span> matplotlib
+
+conda config <span class="nt">--set</span> channel_priority strict
+conda <span class="nb">install </span>conda-forge::root_base
 <span class="c">#pip3 install energyflow</span>
 </code></pre></div></div> <p>Or better install from atttached environmental list</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda create <span class="nt">--name</span> tf <span class="nt">--file</span> condaEnv.list
 </code></pre></div></div> <p>Verify tensorflow installation :</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Verify the installation:</span>

@@ -105,23 +105,29 @@ Miniconda install [here](https://educe-ubc.github.io/conda.html)
 
 One needs to install CUDA for machine learning [https://canonical-ubuntu-wsl.readthedocs-hosted.com/en/latest/tutorials/gpu-cuda/](https://canonical-ubuntu-wsl.readthedocs-hosted.com/en/latest/tutorials/gpu-cuda/)
 
+Follow this installation :
+[https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=deb_local](Nvidia)
+
+
 
 ``` bash
 conda update conda
 conda activate
-conda config --set channel_priority strict
-conda create -c conda-forge --name tf root
+
+conda create --name tf python=3.10
 conda activate tf
 pip install --upgrade pip
-python3 -m pip install tensorflow==2.12
-conda install -c conda-forge cudatoolkit=11.2.2
-pip install cudnn==8.9.4
-conda update --force conda
+pip install tensorflow[and-cuda]
 
+python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+
+
+conda update --force conda
 conda install -c anaconda pandas
 conda install -c conda-forge uproot
-pip install --user root_numpy
-pip install --upgrade matplotlib
+
+conda config --set channel_priority strict
+conda install conda-forge::root_base
 #pip3 install energyflow
 ```
 

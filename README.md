@@ -8,4 +8,6 @@ and interested in making software comfortable for everyone.
 
 🌐 [aprozo.com](https://aprozo.com) · 📧 [me@aprozo.com](mailto:aprozo@me.com) · [ORCID](0000-0001-8368-8290) 
 
-![stats](https://github-readme-stats.vercel.app/api?username=aprozo&show_icons=true&hide_border=true)
+<p align="center">
+  <img src="./profile/stats.svg" alt="GitHub stats" />
+</p>

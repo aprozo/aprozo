@@ -9,6 +9,6 @@ and interested in making software comfortable for everyone.
 🌐 [aprozo.com](https://aprozo.com) · 📧 [me@aprozo.com](mailto:aprozo@me.com) · [ORCID](0000-0001-8368-8290) 
 
 <p align="center">
-  <img src="./profile/stats.svg" alt="GitHub stats" />
+  <!-- <img src="./profile/stats.svg" alt="GitHub stats" /> -->
   <img src="./profile/top-langs.svg" alt="Top languages" />
 </p>
